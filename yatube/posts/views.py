@@ -17,7 +17,7 @@ def index(request):
 # Posts sorted by group
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.all()
+    posts = group.posts.all()[:LIMIT_ITEMS]
     context = {
         'group': group,
         'posts': posts,

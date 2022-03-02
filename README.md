@@ -22,7 +22,7 @@ Yatube requires Python and Django framework to run.
 Install the dependencies  and start the server.
 
 ```sh
-cd ...\hw02_community
+cd ...\hw02_community\yatube
 python manage.py runserver
 ```
 
