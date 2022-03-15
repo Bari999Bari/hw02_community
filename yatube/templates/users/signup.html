@@ -36,14 +36,14 @@
                   </label>
                   {# К полю ввода добавляем атрибут class #}
                   {{ field|addclass:'form-control' }}
-                    {% if field.help_text %}
-                      <small
-                         id="{{ field.id_for_label }}-help"
-                         class="form-text text-muted"
-                      >
-                        {{ field.help_text|safe }}
-                      </small>
-                    {% endif %}
+                  {% if field.help_text %}
+                    <small
+                       id="{{ field.id_for_label }}-help"
+                       class="form-text text-muted"
+                    >
+                      {{ field.help_text|safe }}
+                    </small>
+                  {% endif %}
                 </div>
               {% endfor %}
               <div class="col-md-6 offset-md-4">
