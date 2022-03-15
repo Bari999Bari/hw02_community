@@ -20,13 +20,17 @@ def index(request):
 
 # Posts sorted by group
 def group_posts(request, slug):
+    template = 'posts/group_list.html'
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.all()[:LIMIT_ITEMS]
+    post_list = group.posts.all()
+    paginator = Paginator(post_list, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     context = {
         'group': group,
-        'page_obj': posts,
+        'page_obj': page_obj,
     }
-    return render(request, 'posts/group_list.html', context)
+    return render(request, template , context)
 
 
 def profile(request, username):
